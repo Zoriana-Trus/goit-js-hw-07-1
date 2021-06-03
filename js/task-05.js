@@ -1,10 +1,17 @@
-let input = document.getElementById("name-input");
-let nameOutput = document.getElementById("name-output");
 
-input.oninput = function () {
-    if (input.value === '') {
-       nameOutput.innerHTML = 'незнакомец';
-    } else{
-    nameOutput.innerHTML = input.value;
-    }
-}
+
+const refs = {
+    input: document.querySelector('#name-input'),
+    titleLable: document.querySelector('body > h1'),
+    titleName: document.querySelector('#name-output'),
+  };
+  
+  refs.input.addEventListener('input', onInputChange);
+  
+  function onInputChange(event) {
+    console.log(event);
+    refs.titleName.textContent =
+      event.currentTarget.value.trim() !== ''
+        ? event.currentTarget.value
+        : 'незнакомец';
+  }

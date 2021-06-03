@@ -19,10 +19,15 @@ const images = [
   const createGalleryItem = ({url,alt}) =>
   `<li><img src ="${url}" alt="${alt}" width = 300px height = 200px</li>`;
   
-  const galleryMarkup = images.map(createGalleryItem);
+  const galleryMarkup = images.map(createGalleryItem)
+  .join(' ');
+
   
   const galleryList = document.querySelector("#gallery");
   galleryList.insertAdjacentHTML("afterbegin", galleryMarkup);
+  
+
+  console.log (galleryList);
 
 
 
